@@ -1,5 +1,4 @@
 .content {
-  font-family: "Ubuntu", sans-serif;
   color: #222;
   font-weight: 200;
 }
@@ -56,7 +55,6 @@
 }
 
 .content code {
-  font-family: "Ubuntu Mono", monospace;
   font-size: 85%;
   padding: 0.2em 0.4em;
   margin: 0;
@@ -72,7 +70,6 @@
   position: absolute;
   content: "\201C";
   font-size: 6em;
-  font-family: roboto, serif;
   line-height: 1.5rem;
   margin-top: 0.1em;
   margin-left: -0.2em;
@@ -118,10 +115,6 @@
 
 .content abbr[title] {
   text-decoration: underline double;
-}
-
-.content kbd {
-  font-family: "Ubuntu Mono", monospace;
 }
 
 .content img {
