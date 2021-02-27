@@ -1,7 +1,7 @@
 {
   "base_url": "https://hungry-hopper-af7608.netlify.app/",
-  "site_title": "Next.js Netlify Blog",
-  "site_description": "Next.js blog template for Netlify",
+  "site_title": "brian sung",
+  "site_description": "things i like",
   "site_keywords": [
     {
       "keyword": "Next.js"
@@ -14,6 +14,5 @@
     }
   ],
   "posts_per_page": 5,
-  "twitter_account": "@my-account",
   "github_account": "seoulection"
 }
