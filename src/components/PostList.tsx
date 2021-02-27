@@ -16,37 +16,51 @@ type Props = {
 export default function PostList({ posts, tags, pagination }: Props) {
   return (
     <div className={"container"}>
-      <div className={"posts"}>
-        <ul className={"post-list"}>
-          {posts.map((it, i) => (
+      <h1>🔥 things i like 🔥</h1>
+      <div className={"posts-container"}>
+        <div className={"posts"}>
+          <ul className={"post-list"}>
+            {posts.map((it, i) => (
+              <li key={i}>
+                <PostItem post={it} />
+              </li>
+            ))}
+          </ul>
+          <Pagination
+            current={pagination.current}
+            pages={pagination.pages}
+            link={{
+              href: (page) => (page === 1 ? "/posts" : "/posts/page/[page]"),
+              as: (page) => (page === 1 ? null : "/posts/page/" + page),
+            }}
+          />
+        </div>
+        <ul className={"categories"}>
+          {tags.map((it, i) => (
             <li key={i}>
-              <PostItem post={it} />
+              <TagLink tag={it} />
             </li>
           ))}
         </ul>
-        <Pagination
-          current={pagination.current}
-          pages={pagination.pages}
-          link={{
-            href: (page) => (page === 1 ? "/posts" : "/posts/page/[page]"),
-            as: (page) => (page === 1 ? null : "/posts/page/" + page),
-          }}
-        />
       </div>
-      <ul className={"categories"}>
-        {tags.map((it, i) => (
-          <li key={i}>
-            <TagLink tag={it} />
-          </li>
-        ))}
-      </ul>
       <style jsx>{`
         .container {
+          display: flex;
+          flex-direction: column;
+          margin: 0 auto;
+          width: 100%;
+          padding: 0 1.5rem;
+        }
+        .posts-container {
           display: flex;
           margin: 0 auto;
           max-width: 1200px;
           width: 100%;
           padding: 0 1.5rem;
+        }
+        h1 {
+          display: flex;
+          justify-content: center;
         }
         ul {
           margin: 0;
